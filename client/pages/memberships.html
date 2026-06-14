@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Management - Membership Management</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-wrapper">
+    <!-- Fixed Left Sidebar -->
+    <aside class="admin-sidebar">
+      <a href="admin-dashboard.html" class="admin-sidebar-logo">FitPulse Gym</a>
+      <nav class="admin-sidebar-nav">
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="members.html">Members</a>
+        <a href="memberships.html" class="active">Memberships</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="renewal-requests.html">Renewal Requests</a>
+        <a id="logoutSidebarLink" class="logout-link">Sign Out</a>
+      </nav>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="admin-header-title">Membership Management</div>
+      </header>
+
+      <div class="admin-content-area">
+        <div class="card admin-card">
+          <h2>Create New Membership</h2>
+          <p class="subtitle">Assign a gym membership plan to registered members</p>
+
+          <!-- Success/Error alert box -->
+          <div id="alertBox" class="alert-box"></div>
+
+          <!-- Membership Management Form Section -->
+          <div class="membership-form-container">
+            <form id="membershipForm">
+              <div class="form-row">
+                <div class="form-col">
+                  <label for="membershipUserSelect">Select Member</label>
+                  <select id="membershipUserSelect" required>
+                    <option value="" disabled selected>Loading members list...</option>
+                  </select>
+                </div>
+                <div class="form-col">
+                  <label for="membershipPlanSelect">Plan Type</label>
+                  <select id="membershipPlanSelect" required>
+                    <option value="monthly">Monthly</option>
+                    <option value="quarterly">Quarterly</option>
+                    <option value="annual">Annual</option>
+                  </select>
+                </div>
+                <div class="form-col">
+                  <label for="membershipStatusSelect">Initial Status</label>
+                  <select id="membershipStatusSelect" required>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" style="width: auto; padding: 0.65rem 1.5rem; font-size: 0.9rem;">Create Membership</button>
+            </form>
+          </div>
+
+          <!-- Memberships List Section -->
+          <h3 class="section-title">Membership Records</h3>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Plan</th>
+                  <th>Status</th>
+                  <th>Expiry Date</th>
+                  <th style="width: 100px;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="membershipsTableBody">
+                <tr>
+                  <td colspan="5" style="text-align: center; color: var(--text-muted);">Loading membership records...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/memberships.js"></script>
+</body>
+</html>

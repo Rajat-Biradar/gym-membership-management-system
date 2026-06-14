@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Management - Admin Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-wrapper">
+    <!-- Fixed Left Sidebar -->
+    <aside class="admin-sidebar">
+      <a href="admin-dashboard.html" class="admin-sidebar-logo">FitPulse Gym</a>
+      <nav class="admin-sidebar-nav">
+        <a href="admin-dashboard.html" class="active">Dashboard</a>
+        <a href="members.html">Members</a>
+        <a href="memberships.html">Memberships</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="renewal-requests.html">Renewal Requests</a>
+        <a id="logoutSidebarLink" class="logout-link">Sign Out</a>
+      </nav>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="admin-header-title">Dashboard Overview</div>
+      </header>
+
+      <div class="admin-content-area">
+        <div class="card admin-card">
+          <h2>Welcome, Administrator</h2>
+          <p class="subtitle">Gym Membership Management Operations</p>
+          <div class="user-info" style="margin-top: 1.5rem; line-height: 1.7; color: var(--text);">
+            <p>Welcome to the administrative operations center. From here, you can oversee all gym management tasks securely:</p>
+            <ul style="margin: 1rem 0 1rem 1.5rem;">
+              <li><strong>Members Profile Management:</strong> View detailed profile inspections and delete standard user registrations.</li>
+              <li><strong>Membership Plan Control:</strong> Setup membership statuses, plans (monthly, quarterly, annual), and track live active/inactive status parameters.</li>
+              <li><strong>Attendance Check-in Logs:</strong> Review standard chronological check-in histories and monitor member attendance.</li>
+            </ul>
+            <p>Use the left sidebar links to seamlessly navigate between specialized management modules.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/admin-dashboard.js"></script>
+</body>
+</html>

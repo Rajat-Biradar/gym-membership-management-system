@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Management - Renewal Requests</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-wrapper">
+    <!-- Fixed Left Sidebar -->
+    <aside class="admin-sidebar">
+      <a href="admin-dashboard.html" class="admin-sidebar-logo">FitPulse Gym</a>
+      <nav class="admin-sidebar-nav">
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="members.html">Members</a>
+        <a href="memberships.html">Memberships</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="renewal-requests.html" class="active">Renewal Requests</a>
+        <a id="logoutSidebarLink" class="logout-link">Sign Out</a>
+      </nav>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="admin-header-title">Renewal Requests</div>
+      </header>
+
+      <div class="admin-content-area">
+        <div class="card admin-card">
+          <h2>Membership Renewal Requests</h2>
+          <p class="subtitle">Review, approve, or reject member-submitted plan renewals</p>
+
+          <!-- Success/Error alert box -->
+          <div id="alertBox" class="alert-box"></div>
+
+          <!-- Requests Table -->
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Member Name</th>
+                  <th>Current Plan</th>
+                  <th>Requested Plan</th>
+                  <th>Current Expiry</th>
+                  <th>Request Date</th>
+                  <th>Status</th>
+                  <th style="width: 250px;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="renewalsTableBody">
+                <tr>
+                  <td colspan="7" style="text-align: center; color: var(--text-muted);">Loading renewal requests...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/renewal-requests.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Management - Login</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Header Logo Bar -->
+  <header>
+    <a href="#" class="logo">FitPulse Gym</a>
+  </header>
+
+  <div class="main-content">
+    <div class="card login-card">
+      <h2>Welcome Back</h2>
+      <p class="subtitle">Please sign in to your account</p>
+
+      <!-- Error Message Area -->
+      <div id="errorMessage" class="alert-box error"></div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" required placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required placeholder="Enter password">
+        </div>
+        <button type="submit">Sign In</button>
+      </form>
+
+      <div style="margin-top: 1.5rem; text-align: center;">
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+          Don't have an account? <a href="register.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">Register</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>

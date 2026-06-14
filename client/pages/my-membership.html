@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Management - My Membership</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-wrapper">
+    <!-- Fixed Left Sidebar -->
+    <aside class="admin-sidebar">
+      <a href="dashboard.html" class="admin-sidebar-logo">FitPulse Gym</a>
+      <nav class="admin-sidebar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="profile.html">Profile</a>
+        <a href="my-membership.html" class="active">My Membership</a>
+        <a href="my-attendance.html">My Attendance</a>
+        <a href="admin-dashboard.html" id="adminNavbarLink" style="display: none; background-color: rgba(37, 99, 235, 0.2); color: white;">Admin Panel</a>
+        <a id="logoutSidebarLink" class="logout-link">Sign Out</a>
+      </nav>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="admin-header-title">My Membership</div>
+      </header>
+
+      <div class="admin-content-area">
+        <div id="alertBox" class="alert-box"></div>
+
+        <div class="card admin-card">
+          <h2>Membership Details</h2>
+          <p class="subtitle">Overview of your active gym subscription plan and duration</p>
+
+          <!-- Displayed when membership exists -->
+          <div id="membershipDetailsBlock" style="display: none;">
+            <div class="member-details-grid" style="margin-top: 0;">
+              <!-- Card 1: Subscription Info -->
+              <div class="details-card">
+                <h4>Subscription Plan</h4>
+                <div class="info-group">
+                  <span class="info-label">Plan Type</span>
+                  <span id="membershipPlan" class="info-value" style="text-transform: capitalize;">Loading...</span>
+                </div>
+                <div class="info-group">
+                  <span class="info-label">Status</span>
+                  <div>
+                    <span id="membershipStatus" class="status-badge">Loading...</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2: Validity Periods -->
+              <div class="details-card">
+                <h4>Validity Dates</h4>
+                <div class="info-group">
+                  <span class="info-label">Start Date</span>
+                  <span id="membershipStart" class="info-value">Loading...</span>
+                </div>
+                <div class="info-group">
+                  <span class="info-label">Expiry Date</span>
+                  <span id="membershipExpiry" class="info-value">Loading...</span>
+                </div>
+              </div>
+
+              <!-- Card 3: Days Remaining Callout -->
+              <div class="details-card" style="justify-content: center; align-items: center; text-align: center;">
+                <h4>Time Remaining</h4>
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; padding: 0.5rem 0; width: 100%;">
+                  <span id="membershipDaysRemaining" style="font-size: 3.5rem; font-weight: 800; color: var(--primary); line-height: 1;">0</span>
+                  <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-top: 0.75rem; letter-spacing: 0.05em;">Days Remaining</span>
+                  <p id="expiryWarningMessage" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1rem;"></p>
+                  
+                  <!-- Renewal Request Form Area -->
+                  <div id="renewalRequestForm" style="width: 100%; border-top: 1px solid var(--border); padding-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; align-items: center;">
+                    <label for="renewalPlanSelect" style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.25rem;">Select Plan for Renewal</label>
+                    <select id="renewalPlanSelect" style="padding: 0.4rem; font-size: 0.85rem; width: 100%; max-width: 200px;">
+                      <option value="monthly">Monthly</option>
+                      <option value="quarterly">Quarterly</option>
+                      <option value="annual">Annual</option>
+                    </select>
+                    <button id="renewRequestBtn" style="width: auto; padding: 0.5rem 1.25rem; font-size: 0.85rem; font-weight: 600; border-radius: 6px;">Request Renewal</button>
+                  </div>
+
+                  <!-- Renewal Request Status Container -->
+                  <div id="renewalStatusContainer" style="width: 100%; border-top: 1px solid var(--border); padding-top: 1rem; display: none; flex-direction: column; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Renewal Request Status</span>
+                    <div>
+                      <span id="renewalStatusBadge" class="status-badge">Pending</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Empty State when user has NO membership records -->
+          <div id="membershipNoneBlock" class="empty-state-card" style="display: none; padding: 3rem 1.5rem;">
+            <span class="empty-state-icon" style="font-size: 2.5rem;">⚠️</span>
+            <h3 style="margin-top: 1rem; color: #1e293b; font-size: 1.35rem; font-weight: 700;">No Membership Found</h3>
+            <p style="margin-top: 0.5rem; max-width: 450px; color: var(--text-muted); line-height: 1.6;">
+              It looks like you do not have an active or inactive membership subscription plan assigned to your account yet. Please see the gym administrator to set up a subscription.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/my-membership.js"></script>
+</body>
+</html>

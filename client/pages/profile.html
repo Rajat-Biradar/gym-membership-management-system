@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Management - My Profile</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-wrapper">
+    <!-- Fixed Left Sidebar -->
+    <aside class="admin-sidebar">
+      <a href="dashboard.html" class="admin-sidebar-logo">FitPulse Gym</a>
+      <nav class="admin-sidebar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="profile.html" class="active">Profile</a>
+        <a href="my-membership.html">My Membership</a>
+        <a href="my-attendance.html">My Attendance</a>
+        <a href="admin-dashboard.html" id="adminNavbarLink" style="display: none; background-color: rgba(37, 99, 235, 0.2); color: white;">Admin Panel</a>
+        <a id="logoutSidebarLink" class="logout-link">Sign Out</a>
+      </nav>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="admin-header-title">My Profile</div>
+      </header>
+
+      <div class="admin-content-area">
+        <div id="alertBox" class="alert-box"></div>
+
+        <div class="member-details-grid">
+          <!-- Card 1: Account Information -->
+          <div class="details-card" id="accountInfoCard">
+            <h4>Account Information</h4>
+            <div class="info-group">
+              <span class="info-label">Full Name</span>
+              <span id="profileName" class="info-value">Loading...</span>
+            </div>
+            <div class="info-group">
+              <span class="info-label">Email Address</span>
+              <span id="profileEmail" class="info-value">Loading...</span>
+            </div>
+            <div class="info-group">
+              <span class="info-label">System Role</span>
+              <span id="profileRole" class="info-value" style="text-transform: capitalize;">Loading...</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Membership Summary -->
+          <div class="details-card" id="membershipSummaryCard">
+            <h4>Membership Summary</h4>
+            <div id="profileMembershipInfo" style="display: none; flex: 1; flex-direction: column; justify-content: flex-start;">
+              <div class="info-group">
+                <span class="info-label">Plan Type</span>
+                <span id="profilePlan" class="info-value" style="text-transform: capitalize;">Loading...</span>
+              </div>
+              <div class="info-group">
+                <span class="info-label">Status</span>
+                <div>
+                  <span id="profileStatus" class="status-badge">Loading...</span>
+                </div>
+              </div>
+            </div>
+            <div id="profileMembershipNone" class="empty-state-card" style="display: none;">
+              <span class="empty-state-icon">⚠️</span>
+              <h5 style="margin-top: 0.5rem; font-weight: 700; color: #475569; font-size: 0.95rem;">No Active Plan</h5>
+              <p>You currently do not have a membership plan.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Attendance Summary -->
+          <div class="details-card" id="attendanceSummaryCard">
+            <h4>Attendance Summary</h4>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; flex: 1; padding: 1rem 0;">
+              <span id="profileAttendanceCount" style="font-size: 3.5rem; font-weight: 800; color: var(--primary); line-height: 1;">0</span>
+              <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-top: 0.75rem; letter-spacing: 0.05em;">Total Gym Check-ins</span>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Keep up the consistent work!</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/profile.js"></script>
+</body>
+</html>

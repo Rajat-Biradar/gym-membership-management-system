@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Management - Attendance History</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-wrapper">
+    <!-- Fixed Left Sidebar -->
+    <aside class="admin-sidebar">
+      <a href="admin-dashboard.html" class="admin-sidebar-logo">FitPulse Gym</a>
+      <nav class="admin-sidebar-nav">
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="members.html">Members</a>
+        <a href="memberships.html">Memberships</a>
+        <a href="attendance.html" class="active">Attendance</a>
+        <a href="renewal-requests.html">Renewal Requests</a>
+        <a id="logoutSidebarLink" class="logout-link">Sign Out</a>
+      </nav>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="admin-header-title">Attendance History</div>
+      </header>
+
+      <div class="admin-content-area">
+        <div class="card admin-card">
+          <h2>Check-in Logs</h2>
+          <p class="subtitle">Chronological record of user gym check-in events</p>
+
+          <!-- Success/Error alert box -->
+          <div id="alertBox" class="alert-box"></div>
+
+          <!-- Attendance Section -->
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Check-in Date</th>
+                  <th>Check-in Time</th>
+                </tr>
+              </thead>
+              <tbody id="attendanceTableBody">
+                <tr>
+                  <td colspan="3" style="text-align: center; color: var(--text-muted);">Loading attendance logs...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/attendance.js"></script>
+</body>
+</html>

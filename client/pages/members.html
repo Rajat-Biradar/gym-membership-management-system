@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Management - Member Management</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-wrapper">
+    <!-- Fixed Left Sidebar -->
+    <aside class="admin-sidebar">
+      <a href="admin-dashboard.html" class="admin-sidebar-logo">FitPulse Gym</a>
+      <nav class="admin-sidebar-nav">
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="members.html" class="active">Members</a>
+        <a href="memberships.html">Memberships</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="renewal-requests.html">Renewal Requests</a>
+        <a id="logoutSidebarLink" class="logout-link">Sign Out</a>
+      </nav>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="admin-header-title">Member Management</div>
+      </header>
+
+      <div class="admin-content-area">
+        <div class="card admin-card">
+          <h2>Registered Members</h2>
+          <p class="subtitle">View member details, check-in history, and manage registrations</p>
+
+          <!-- Success/Error alert box -->
+          <div id="alertBox" class="alert-box"></div>
+
+          <!-- Members Table -->
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email Address</th>
+                  <th>System Role</th>
+                  <th style="width: 250px;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="membersTableBody">
+                <tr>
+                  <td colspan="4" style="text-align: center; color: var(--text-muted);">Loading members...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Member Details Section (Hidden by default, shown on View Details click) -->
+          <div id="memberDetailsSection" class="card fade-in" style="display: none; margin-top: 2rem; border: 1px solid var(--border);">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border); padding-bottom: 0.75rem; margin-bottom: 1.5rem;">
+              <h3 style="margin: 0; color: #1e293b; font-size: 1.35rem; font-weight: 800; letter-spacing: -0.025em;">Member Detailed Profile</h3>
+              <button id="closeDetailsBtn" class="btn-secondary" style="width: auto; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 600; border-radius: 6px;">Close Details</button>
+            </div>
+            
+            <div class="member-details-grid">
+              <!-- Card 1: Member Profile -->
+              <div class="details-card">
+                <h4>Member Profile</h4>
+                <div class="info-group">
+                  <span class="info-label">Full Name</span>
+                  <span id="detailName" class="info-value">Loading...</span>
+                </div>
+                <div class="info-group">
+                  <span class="info-label">Email Address</span>
+                  <span id="detailEmail" class="info-value">Loading...</span>
+                </div>
+                <div class="info-group">
+                  <span class="info-label">System Role</span>
+                  <span id="detailRole" class="info-value" style="text-transform: capitalize;">Loading...</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Membership Information -->
+              <div class="details-card">
+                <h4>Membership Plan</h4>
+                
+                <!-- Displayed when user has a plan -->
+                <div id="detailMembershipInfo" style="display: none; flex: 1; flex-direction: column; justify-content: flex-start;">
+                  <div class="info-group">
+                    <span class="info-label">Plan Type</span>
+                    <span id="detailPlan" class="info-value" style="text-transform: capitalize;">Loading...</span>
+                  </div>
+                  <div class="info-group">
+                    <span class="info-label">Status</span>
+                    <div>
+                      <span id="detailStatus" class="status-badge" style="text-transform: capitalize;">Loading...</span>
+                    </div>
+                  </div>
+                  <div class="info-group">
+                    <span class="info-label">Expiry Date</span>
+                    <span id="detailExpiry" class="info-value">Loading...</span>
+                  </div>
+                </div>
+
+                <!-- Friendly Empty State handling when user has NO plan -->
+                <div id="detailMembershipNone" class="empty-state-card" style="display: none;">
+                  <span class="empty-state-icon">⚠️</span>
+                  <h5 style="margin-top: 0.5rem; font-weight: 700; color: #475569; font-size: 0.95rem;">No Active Plan</h5>
+                  <p>This member does not have any active or inactive membership plan assigned.</p>
+                </div>
+              </div>
+
+              <!-- Card 3: Attendance History -->
+              <div class="details-card">
+                <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                  <span>Attendance History</span>
+                  <span id="detailAttendanceCount" class="attendance-count-badge">0</span>
+                </h4>
+
+                <!-- Displayed when user has attendance history -->
+                <div id="detailAttendanceTableWrapper" class="scrollable-attendance-list" style="display: none;">
+                  <table>
+                    <tbody id="detailAttendanceTableBody">
+                      <!-- Dynamically populated rows -->
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Friendly Empty State handling when user has NO attendance logs -->
+                <div id="detailAttendanceNone" class="empty-state-card" style="display: none;">
+                  <span class="empty-state-icon">📅</span>
+                  <h5 style="margin-top: 0.5rem; font-weight: 700; color: #475569; font-size: 0.95rem;">No Check-ins</h5>
+                  <p>This member has not checked into the gym yet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/members.js"></script>
+</body>
+</html>

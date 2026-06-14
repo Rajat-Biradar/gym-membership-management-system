@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Management - Register</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Header Logo Bar -->
+  <header>
+    <a href="#" class="logo">FitPulse Gym</a>
+  </header>
+
+  <div class="main-content">
+    <div class="card login-card">
+      <h2>Create Account</h2>
+      <p class="subtitle">Join FitPulse Gym and start your journey</p>
+
+      <!-- Alert Box Area for success/error messages -->
+      <div id="alertBox" class="alert-box"></div>
+
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" required placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required placeholder="Create a password">
+        </div>
+        <button type="submit" id="registerBtn">Sign Up</button>
+      </form>
+
+      <div style="margin-top: 1.5rem; text-align: center;">
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+          Already have an account? <a href="login.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">Login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/register.js"></script>
+</body>
+</html>
